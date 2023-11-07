@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>ru.panteleev.php-documentation</id>
+    <name>PHP Documentation</name>
+    <vendor email="sergey@php.net" url="https://github.com/saundefined/php-documentation/">sergey-panteleev</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="PHP Documentation Plugin" displayType="BALLOON"/>
+        <postStartupActivity implementation="com.github.saundefined.php_documentation.activity.NotificationStartupActivity"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.saundefined.php_documentation.settings.ApplicationSettingsConfigurable"
+                id="com.github.saundefined.php_documentation.settings.ApplicationSettingsConfigurable"
+                displayName="PHP Documentation"/>
+        <applicationService serviceImplementation="com.github.saundefined.php_documentation.settings.AppSettingsState"/>
+    </extensions>
+
+    <resource-bundle>messages.PHPDocumentationBundle</resource-bundle>
+</idea-plugin>
